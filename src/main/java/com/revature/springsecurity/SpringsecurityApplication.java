@@ -15,15 +15,15 @@ public class SpringsecurityApplication extends WebSecurityConfigurerAdapter {
 		SpringApplication.run(SpringsecurityApplication.class, args);
 	}
 
-	@Override
+	/**@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("user1").password("(noop)user1").roles("USER");
-	}
+	}*/
 
 	// disables the default security configuration
-	@Override
+	/**@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-	}
+	}*/
 
 }
