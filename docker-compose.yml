@@ -1,0 +1,23 @@
+services:
+  db:
+    container_name: db1
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "wcp"
+      POSTGRES_PASSWORD: "wcp"
+    volumes:
+      - ./messagedb/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./messagedb/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  app:
+    container_name: app
+    depends_on:
+      - db
+    restart: always
+    build:
+      context: ./build/libs
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
