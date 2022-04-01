@@ -1,10 +1,11 @@
 package com.revature.p2.waaik.com.revature.p2.musicme.user.entity;
 
-import org.hibernate.annotations.Generated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.util.UUID;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @Entity(name = "music")
 public class User {
     @Id
