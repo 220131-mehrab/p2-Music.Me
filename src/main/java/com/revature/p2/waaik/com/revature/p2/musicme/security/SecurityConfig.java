@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Order
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
+    /**@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user1").password("(noop)user1").roles("USER");
     }
@@ -21,5 +21,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-    }
+    }*/
 }
