@@ -36,13 +36,15 @@ public class User {
     @Column(
             name = "user_email",
             nullable = false,
-            columnDefinition = "TEXT"
+            columnDefinition = "TEXT",
+            unique = true
     )
     private String userEmail;
     @Column(
             name = "user_password",
             nullable = false,
-            columnDefinition = "TEXT"
+            columnDefinition = "TEXT",
+            unique = true
     )
     private String userPW;
 
